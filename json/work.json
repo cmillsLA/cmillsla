@@ -1,0 +1,92 @@
+{ "projects": [
+	{
+		"linkUrl": "http://www.knotdesignllc.com/",
+		"imgPath": "/imgs/work/full/knot.jpg",
+		"thumbPath": "/imgs/work/thumb/knot.jpg",
+		"projectTitle": "Knot Design, LLC",
+		"technology": "HTML5, CSS3, Javascript, jQuery, PHP",
+		"projectSummary":"Knot Design LLC is a boutique design firm located in Pasadena, CA.  Specializing primarily in product design, Knot needed a website developed to showcase their portfolio.  I developed a flash-alternative single page website using only javascript animation.",
+		"minDesc":"Custom web development of a one page javascript site for Knot Design, LLC, a design firm.",
+		"projId":"projectKnot"
+	},
+	{
+		"linkUrl": null,
+		"imgPath": "/imgs/work/full/dex.jpg",
+		"thumbPath": "/imgs/work/thumb/dex.jpg",
+		"projectTitle": "Dex One - App",
+		"technology": "HTML5, CSS3, Javascript, jQuery, jQuery Mobile, jQuery UI, Backbone.js, Web Design",
+		"projectSummary":"Bundle Builder for Dex One is a complex application developed for sales reps to sell advertising bundles to clients.  This app works on IE8+ but is optimized for iPad.  In order to meet all the development demands I used jQuery, jQuery Mobile, jQuery UI and Backbone.js to create a fast, lightweight application.",
+		"minDesc":"UI redesign and development for a sales app for Dex using jQuery and Backbone.js",
+		"projId":"projectDex"
+	},
+	{
+		"linkUrl": "http://www.nolosangeles.com/",
+		"imgPath": "/imgs/work/full/no.jpg",
+		"thumbPath": "/imgs/work/thumb/no.jpg",
+		"projectTitle": "NO the band",
+		"technology": "HTML5, CSS3, Javascript, jQuery, PHP, Tumblr API, Lots of Widgets",
+		"projectSummary":"NO, is an indie rock band from Echo Park, CA.  They needed a website developed to provide band news, tour dates and music to their fans.  Using the tumblr API I was able to bring in their tumblr feed to keep the news section up-to-date without having to tie in a heavy backend CMS.  This created a lightweight dynamic conent solution that is also easy to update.",
+		"minDesc":"Custom web site developed for NO, a band from Los Angeles, CA.",
+		"projId":"projectNo"
+	},
+	{
+		"linkUrl": "http://www.modernmoto.net/",
+		"imgPath": "/imgs/work/full/modern.jpg",
+		"thumbPath": "/imgs/work/thumb/modern.jpg",
+		"projectTitle": "Modern Moto Blog",
+		"technology": "HTML5, CSS3, PHP, Wordpress, Web Design",
+		"projectSummary":"I designed this Wordpress blog to showcase well designed and built vintage motorcyles I came across online.",
+		"minDesc":"Wordpress based Vintage Motorcycle blog, design &amp; development.",
+		"projId":"projectModern"
+	},
+	{
+		"linkUrl": "http://www.vvmcphotos.com/",
+		"imgPath": "/imgs/work/full/vvmc.jpg",
+		"thumbPath": "/imgs/work/thumb/vvmc.jpg",
+		"projectTitle": "VVMC Photos",
+		"technology": "HTML5, CSS3, PHP, Web Design",
+		"projectSummary":"Simple website showcasing photos from Venice Vintage Motorcycle Club meetups.",
+		"minDesc":"Photos from VVMC meetups.",
+		"projId":"projectVVMC"
+	},
+	{
+		"linkUrl": "http://www.craigsmotors.com/",
+		"imgPath": "/imgs/work/full/craigs.jpg",
+		"thumbPath": "/imgs/work/thumb/craigs.jpg",
+		"projectTitle": "CraigsMotors",
+		"technology": "HTML5, CSS3, Javascript, Web Design",
+		"projectSummary":"I designed and developed the frontend of a search engine that searches all of the nationwide Craigslist automovite section.",
+		"minDesc":"Front end design and development for a Craigslist motors search engine.",
+		"projId":"projectCraigs"
+	},
+	{
+		"linkUrl": null,
+		"imgPath": "/imgs/work/full/ams.jpg",
+		"thumbPath": "/imgs/work/thumb/ams.jpg",
+		"projectTitle": "Account Management System",
+		"technology": "javascript, jQuery, jQuery UI, Google Maps API, Highcharts.js",
+		"projectSummary":"Front end development for updates and additional features for the Dex custom Account Management System.",
+		"minDesc":"Dex Account Management System Front End Development.",
+		"projId":"projectAMS"
+	},
+	{
+		"linkUrl": null,
+		"imgPath": "/imgs/work/full/fulfillment.jpg",
+		"thumbPath": "/imgs/work/thumb/fulfillment.jpg",
+		"projectTitle": "Fulfillment Dashboard",
+		"technology": "HTML5, CSS3, javascript, jQuery, Highcharts",
+		"projectSummary":"Single page app showing the new Dex API, this project used jQuery and Highcharts to display data from the API.  Also I used local storage to cache data when necessary to reduce calls to the API.",
+		"minDesc":"One page app I developed to showcase our new API.",
+		"projId":"projectFulfillment"
+	},
+	{
+		"linkUrl": "http://www.stevewilkos.com/",
+		"imgPath": "/imgs/work/full/wilkos.jpg",
+		"thumbPath": "/imgs/work/thumb/wilkos.jpg",
+		"projectTitle": "Steve Wilkos Show",
+		"technology": "XHTML, CSS, javascript, jQuery",
+		"projectSummary":"Front end web development for the Steve Wilkos Show website through Wireframe.com, an interactive agency.  Developed the site from PSDs to integrate with a custom PHP backend.",
+		"minDesc":"Front End Development for Steve Wilkos show through Wireframe.com.",
+		"projId":"projectWilkos"
+	}
+]}
