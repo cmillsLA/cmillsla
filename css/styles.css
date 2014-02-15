@@ -572,6 +572,9 @@ a.orangeGradient:hover {
 .block {
 	display:block !important;
 }
+.dNone {
+	display:none !important;
+}
 /* */
 
 /* desktop */
