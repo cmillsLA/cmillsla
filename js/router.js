@@ -7,13 +7,15 @@ define([
 	'scripts',
   'views/home/HomeView',
   'views/work/WorkView',
-  'views/contact/ContactView'
-], function($, _, Backbone, scripts, HomeView, WorkView, ContactView) {
+  'views/contact/ContactView',
+  'views/update/UpdateView'
+], function($, _, Backbone, scripts, HomeView, WorkView, ContactView, UpdateView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       'work': 'showWork',
       'contact': 'showContact',
+      'update': 'showUpdate',
       '*actions': 'defaultAction'
     }
   });
@@ -88,6 +90,12 @@ define([
         var contactView = new ContactView();
         contactView.render();
 				$(window).unbind("resize.app");
+    });
+
+    app_router.on('route:showUpdate', function (actions) {
+      var updateView = new UpdateView();
+      updateView.render();
+      $(window).unbind("resize.app");
     });
 
     app_router.on('route:defaultAction', function (actions) {
