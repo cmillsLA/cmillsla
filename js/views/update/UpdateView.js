@@ -18,7 +18,7 @@ define([
     test: function() {
       $.ajax({
         contentType: "application/json",
-        url: "http://74.91.130.13/api/property?propertyId=54",
+        url: "http://74.91.130.13/portfolio/projects",
         type: "GET",
         cache: false,
         success: function(d) {
