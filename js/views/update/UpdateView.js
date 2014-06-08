@@ -39,7 +39,10 @@ define([
         dataType: "json",
         url: 'http://74.91.130.13/portfolio/reviews',
         success: function(d) {
-
+          console.log(d);
+        },
+        error: function(response) {
+          alert('error');
         }
       });
     },
