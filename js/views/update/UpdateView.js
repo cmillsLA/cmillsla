@@ -15,18 +15,19 @@ define([
     	//'click #submitForm': 'submit'
     },
     
-    // Contact animation for initial load
-    animateContact: function() {
-			var speed = 0;
-    	$('#contact p').each(function(i) {
-    		speed = speed + 500;
-    		$(this).fadeIn(speed);
-    	});
-    	$('#contactForm').delay(1000).fadeIn(1000);
-    },
-    
-    clearErrors: function() {
-    
+    test: function() {
+      $.ajax({
+        contentType: "application/json",
+        url: "http://74.91.130.13/portfolio/projects",
+        type: "GET",
+        cache: false,
+        success: function(d) {
+          console.log(d);
+        },
+        error: function(response) {
+          alert('error');
+        }
+      })
     },
     
     submit: function(e) {
@@ -54,7 +55,7 @@ define([
 						error: function(response) {
 							$('#contact').append('<p id="contactThanks">There was a problem with your request, please try again.</p>');
 						}
-				})
+				});
 				// fetch post doesn't get along with php well
 				/*sendForm.fetch({
 	    		success: function(r) {
