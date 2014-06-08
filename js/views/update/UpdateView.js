@@ -17,7 +17,7 @@ define([
 
     fbInit: function() {
       console.log('fb init');
-      $window.fbAsyncInit = function() {
+      $(window).fbAsyncInit = function() {
 
         FB.init({
           appId      : '221418578022709', // App ID
