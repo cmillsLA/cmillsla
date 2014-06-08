@@ -32,7 +32,6 @@ define([
         beforeSend: function (xhr){
           xhr.setRequestHeader("Accept", "application/json");
           xhr.setRequestHeader("Content-Type", "application/json");
-          //xhr.setRequestHeader('token', getCookie("token"));
         },
         type: "GET",
         contentType: "application/json; charset=UTF-8",
