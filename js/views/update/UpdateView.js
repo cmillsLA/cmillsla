@@ -28,9 +28,21 @@ define([
           alert('error');
         }
       });*/
-      var url = 'http://74.91.130.13/api/reviews';
-      var xhr = createCORSRequest('GET', url);
-      xhr.send();
+      $.ajax({
+        beforeSend: function (xhr){
+          xhr.setRequestHeader("Accept", "application/json");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.setRequestHeader('token', getCookie("token"));
+        },
+        type: "GET",
+        contentType: "application/json; charset=UTF-8",
+        dataType: "json",
+        url: 'http://74.91.130.13/portfolio/reviews',
+        data: JSON.stringify(newProfileAddress),
+        success: function(d) {
+
+        }
+      });
     },
     
     submit: function(e) {
