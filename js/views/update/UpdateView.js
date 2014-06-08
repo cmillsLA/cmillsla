@@ -16,7 +16,6 @@ define([
     },
 
     fbInit: function() {
-      console.log('fb init');
       $(window).fbAsyncInit = function() {
 
         FB.init({
