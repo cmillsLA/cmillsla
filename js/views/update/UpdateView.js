@@ -73,6 +73,7 @@ define([
 
     render: function() {
     	this.$el.html(updateTemplate);
+      this.test();
     }
 
   });
