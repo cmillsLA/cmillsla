@@ -38,7 +38,6 @@ define([
         contentType: "application/json; charset=UTF-8",
         dataType: "json",
         url: 'http://74.91.130.13/portfolio/reviews',
-        data: JSON.stringify(newProfileAddress),
         success: function(d) {
 
         }
