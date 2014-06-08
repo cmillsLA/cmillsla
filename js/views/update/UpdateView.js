@@ -16,7 +16,7 @@ define([
     },
     
     test: function() {
-      $.ajax({
+      /*$.ajax({
         contentType: "application/json",
         url: "http://74.91.130.13/portfolio/reviews",
         type: "GET",
@@ -27,7 +27,10 @@ define([
         error: function(response) {
           alert('error');
         }
-      })
+      });*/
+      var url = 'http://74.91.130.13/api/reviews';
+      var xhr = createCORSRequest('GET', url);
+      xhr.send();
     },
     
     submit: function(e) {
