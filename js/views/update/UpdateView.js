@@ -18,7 +18,7 @@ define([
     test: function() {
       $.ajax({
         contentType: "application/json",
-        url: "http://74.91.130.13/portfolio/projects",
+        url: "http://74.91.130.13/portfolio/reviews",
         type: "GET",
         cache: false,
         success: function(d) {
