@@ -1,1 +1,1 @@
-alert('external file!');
+console.log('external file!');
