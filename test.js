@@ -5,6 +5,4 @@ script.type = 'text/javascript';
 script.src = 'http://chrismills.la/test2.js';
 document.getElementsByTagName("head")[0].appendChild(script);
 
-alert(document);
-
 //document.write('<script type="text/javascript" src="http://chrismills.la/test2.js"><\/script>');
