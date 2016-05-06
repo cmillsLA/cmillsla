@@ -1113,7 +1113,7 @@ module.exports =
           null,
           _react2['default'].createElement(
             ReactCSSTransitionGroup,
-            { transitionName: 'cm', transitionAppear: true, transitionAppearTimeout: 500 },
+            { transitionName: 'cm', transitionAppear: true },
             _react2['default'].createElement(
               'h1',
               null,
@@ -1190,7 +1190,7 @@ module.exports =
           null,
           _react2['default'].createElement(
             ReactCSSTransitionGroup,
-            { transitionName: 'cm', transitionAppear: true, transitionAppearTimeout: 500 },
+            { transitionName: 'cm', transitionAppear: true },
             _react2['default'].createElement(
               'div',
               { className: 'cm-welcome' },
@@ -1260,7 +1260,7 @@ module.exports =
   								null,
   								_react2['default'].createElement(
   										ReactCSSTransitionGroup,
-  										{ transitionName: 'cm', transitionAppear: true, transitionAppearTimeout: 500 },
+  										{ transitionName: 'cm', transitionAppear: true },
   										_react2['default'].createElement(
   												'h1',
   												null,
@@ -1486,7 +1486,7 @@ module.exports =
   				null,
   				_react2['default'].createElement(
   					ReactCSSTransitionGroup,
-  					{ transitionName: 'cm', transitionAppear: true, transitionAppearTimeout: 500 },
+  					{ transitionName: 'cm', transitionAppear: true },
   					_react2['default'].createElement(
   						'h1',
   						null,
@@ -1495,7 +1495,7 @@ module.exports =
   				),
   				_react2['default'].createElement(
   					ReactCSSTransitionGroup,
-  					{ transitionName: 'cm', transitionAppear: true, transitionAppearTimeout: 500 },
+  					{ transitionName: 'cm', transitionAppear: true },
   					_react2['default'].createElement(_componentsProjects2['default'], null)
   				)
   			);
