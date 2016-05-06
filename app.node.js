@@ -424,42 +424,58 @@ module.exports =
 
     getInitialState: function getInitialState() {
       return {
-        showForm: true
+        showForm: true,
+        submitting: false,
+        validEmail: true
       };
     },
     handleSubmit: function handleSubmit(e) {
       e.preventDefault();
       this.submitForm();
     },
+    buildQueryString: function buildQueryString(obj) {
+      var _str = '';
+      var key = 0;
+      for (var i in obj) {
+        _str += '&' + i + '=' + obj[i];
+        key += 1;
+      }
+      return _str;
+    },
+    validateEmail: function validateEmail(str) {
+      if (str && str.length > 1) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(str);
+      }
+      return false;
+    },
     submitForm: function submitForm() {
-      console.log('submit form called!');
+      this.setState({ 'validEmail': true });
       var formData = {
         name: _react2['default'].findDOMNode(this.refs['cm-name']).value,
         email: _react2['default'].findDOMNode(this.refs['cm-email']).value,
         phone: _react2['default'].findDOMNode(this.refs['cm-phone']).value,
-        website: _react2['default'].findDOMNode(this.refs['cm-website']).value,
+        url: _react2['default'].findDOMNode(this.refs['cm-website']).value,
         phone: _react2['default'].findDOMNode(this.refs['cm-phone']).value,
-        project: _react2['default'].findDOMNode(this.refs['cm-project']).value
+        message: _react2['default'].findDOMNode(this.refs['cm-project']).value
       };
-      this.setState({ 'showForm': false });
-      this.state.showForm = false;
-      console.log('form data', formData, '/form data');
-      /*var xmlhttp = new XMLHttpRequest();
-      var _this = this;
-      xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState === 4) {
-          var response = JSON.parse(xmlhttp.responseText);
-          if (xmlhttp.status === 200 && response.status === 'OK') {
-            _this.setState({ type: 'success', message: 'We have received your message and will get in touch shortly. Thanks!' });
+      if (formData.email && this.validateEmail(formData.email)) {
+        this.setState({ 'submitting': true });
+        var xmlhttp = new XMLHttpRequest();
+        var _this = this;
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState === 4) {
+            var response = JSON.parse(xmlhttp.responseText);
+            _this.setState({ 'showForm': false });
+            this.setState({ 'submitting': false });
           }
-          else {
-            _this.setState({ type: 'danger', message: 'Sorry, there has been an error. Please try again later or send us an email at info@example.com.' });
-          }
-        }
-      };
-      xmlhttp.open('POST', 'send', true);
-      xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-      xmlhttp.send(this.requestBuildQueryString(formData));*/
+        };
+        xmlhttp.open('POST', 'https://script.google.com/macros/s/AKfycbyRqZDn0XZj5ruN-ewJfOdNmBAKveFigbd88WRnm8oFDWACtKU/exec', true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send(_this.buildQueryString(formData));
+      } else {
+        this.setState({ 'validEmail': false });
+      }
     },
     render: function render() {
       return _react2['default'].createElement(
@@ -467,7 +483,7 @@ module.exports =
         null,
         _react2['default'].createElement(
           'form',
-          { onSubmit: this.handleSubmit, className: this.state.showForm ? '' : 'cm-hide' },
+          { disabled: this.state.submitting ? 'disabled' : 'false', onSubmit: this.handleSubmit, className: this.state.showForm ? '' : 'cm-hide' },
           _react2['default'].createElement(
             'label',
             { 'for': 'cm-form-name', className: 'cm-sr' },
@@ -479,7 +495,7 @@ module.exports =
             { 'for': 'cm-form-name', className: 'cm-sr' },
             'Email (required):'
           ),
-          _react2['default'].createElement('input', { ref: 'cm-email', className: 'cm-input cm-right', type: 'text', id: 'cm-form-email', placeholder: 'Email (Required)' }),
+          _react2['default'].createElement('input', { ref: 'cm-email', className: this.state.validEmail ? 'cm-input cm-right' : 'cm-input cm-right cm-input-error', type: 'text', id: 'cm-form-email', placeholder: 'Email (Required)' }),
           _react2['default'].createElement(
             'label',
             { 'for': 'cm-form-name', className: 'cm-sr' },
@@ -498,12 +514,12 @@ module.exports =
             'Project Details:'
           ),
           _react2['default'].createElement('textarea', { ref: 'cm-project', className: 'cm-textarea', type: 'text', id: 'cm-form-project', placeholder: 'Project Details' }),
-          _react2['default'].createElement('input', { type: 'submit', className: 'cm-btn', value: 'Send' })
+          _react2['default'].createElement('input', { type: 'submit', className: !this.state.submitting ? 'cm-btn' : 'cm-btn cm-btn-disabled', value: !this.state.submitting ? 'Send' : 'Sending' })
         ),
         _react2['default'].createElement(
           'p',
           { className: this.state.showForm ? 'cm-hide' : '' },
-          'Thanks!'
+          'Thanks, I will get back to you in the next business day.'
         )
       );
     }
@@ -1543,7 +1559,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\nhtml, body {\n  margin:0;\n  padding:0;\n}\nbody {\n  background: #666;\n  color:#fff;\n  font-family: \"prox\", Helvetica, sans-serif;\n}\nh1 {\n  font-size:normal;\n}\np {\n  font-size:18px;\n  line-height:30px;\n  padding-bottom:12px;\n}\na, a:hover {\n  color:#3fb2ee;\n  text-decoration:underline;\n}\na:hover {\n  text-decoration:none;\n  color:#67cbff;\n}\n.Layout {\n  border-top:5px solid #191919;\n}\n.container {\n  margin:0 auto 30px auto;\n  width:970px;\n  padding:170px 0 0 0;\n}\n.container-border-top {\n  background:#111;\n  width:100vw;\n  display:block;\n  position:fixed;\n  left:0;\n  top:0;\n  height:5px;\n}\n.loading {\n  background-image: url('/loader_white.gif');\n  background-repeat: no-repeat;\n  background-position: center center;\n  width:100vw;\n  height:100vh;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: .9;\n  -webkit-transition: opacity .5s;\n  -o-transition: opacity .5s;\n  transition:opacity .5s;\n}\n.cm-hide {\n  opacity:0;\n}\n.cm-appear {\n  opacity: 0.01;\n}\n.cm-appear.cm-appear-active {\n   opacity: 1;\n   -webkit-transition: opacity 500ms ease-in-out;\n   -o-transition: opacity 500ms ease-in-out;\n   transition: opacity 500ms ease-in-out;\n}\n.cm-center {\n  text-align:center;\n}\n.cm-fast-appear {\n  opacity: 0.01;\n}\n.cm-fast-appear.cm-fast-appear-active {\n  opacity: 1;\n  -webkit-transition: opacity .25s ease-in-out;\n  -o-transition: opacity .25s ease-in-out;\n  transition: opacity .25s ease-in-out;\n}\n.cm-fast-enter {\n  opacity: 0.01;\n}\n.cm-fast-enter.cm-fast-enter-active {\n  opacity: 1;\n  -webkit-transition: opacity 500ms ease-in;\n  -o-transition: opacity 500ms ease-in;\n  transition: opacity 500ms ease-in;\n}\n.cm-fast-leave {\n  opacity: 1;\n}\n.cm-fast-leave.cm-fast-leave-active {\n  opacity: 0.01;\n  -webkit-transition: opacity 300ms ease-in;\n  -o-transition: opacity 300ms ease-in;\n  transition: opacity 300ms ease-in;\n}\n/* Home */\n.cm-welcome {\n  padding:0;\n  /*display:none;*/\n  background:rgba(0, 0 , 0, .5);\n  position: absolute;\n  bottom: 20%;\n  margin: 0 auto;\n  width: 760px;\n  text-align: center;\n  padding: 20px;\n  left: 50%;\n  margin-left: -400px;\n}\n.cm-welcome h1 {\n  font-weight:normal;\n  font-size:36px;\n  line-height:42px;\n}\n.cm-sr {\n  position:absolute;\n  text-indent:-9999px;\n}\n/* Work */\n.cm-btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  -webkit-transition: background .25s;\n  -o-transition: background .25s;\n  transition:background .25s;\n  text-align:center;\n  background:#3fb2ee;\n  text-decoration:none;\n  color:#fff;\n}\n.cm-btn:hover {\n  background:#67cbff;\n  color:#fff;\n}\n.cm-btn-wide {\n  padding:10px 44px;\n}\n.cm-hide {\n  display:none;\n}\n.cm-m14 {\n  margin:14px;\n}\n.cm-center {\n  text-align:center;\n}\nhr {\n  border:1px solid #999;\n  height:0\n}\n/* Thumb Animations */\n#bg\n.projectOverlay {\n  background: #333;\n  background: rgba(3, 3, 3, 0.6);\n  -o-transition: opacity 250ms;\n  transition: opacity 250ms;\n  -webkit-transition: opacity 250ms;\n  -o-transition-delay:1s;\n     transition-delay:1s;\n  -webkit-transition-delay:1s;\n  opacity:0;\n  overflow:hidden;\n  position:absolute;\n  cursor:pointer;\n  top:0;\n  left:.5%;\n  z-index:2;\n  width:100%;\n  height:100%;\n}\n/* Misc */\n.clear {\n  clear:both;\n}\n.pRel {\n  position:relative;\n}\n.block {\n  display:block !important;\n}\n.dNone {\n  display:none !important;\n}\n/* */\n\n/* large displays */\n@media only screen and (min-width: 1500px) {\n  .container {\n    margin:30px auto 30px auto;\n    width:1200px;\n  }\n  .logo {\n    background:url('/imgs/chris_mills_big.png');\n    width:320px;\n    height:67px;\n    position:absolute;\n    left:180px;\n    margin:0;\n    padding:0;\n    top:77px;\n  }\n  .cm-welcome {\n    bottom:25%;\n    width:1160px;\n    margin-left:-540px;\n    width:1020px;\n    padding:30px;\n  }\n  .cm-welcome h1 {\n    font-size:50px;\n    line-height:58px;\n  }\n  .cm-textarea {\n    height:300px;\n    width:1176px !important;\n  }\n}\n\n/* Tablet & Mobile */\n@media (max-width: 768px) {\n  body {\n    background:#3d5470;\n  }\n  .Layout {\n    padding:15px;\n  }\n  .container {\n    width:auto;\n    padding:100px 0 0 0;\n    margin:0 auto;\n  }\n  .logo {\n    left:15px;\n    top:15px;\n  }\n  h1 {\n    font-size:24px;\n  }\n}\n/* Mobile */\n@media only screen and (max-width: 767px) {\n  .cm-welcome {\n    position:relative;\n    left:0;\n    top:0;\n    margin:25vh 0 0 0;\n    width:auto;\n  }\n}\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\nhtml, body {\n  margin:0;\n  padding:0;\n}\nbody {\n  background: #666;\n  color:#fff;\n  font-family: \"prox\", Helvetica, sans-serif;\n}\nh1 {\n  font-size:normal;\n}\np {\n  font-size:18px;\n  line-height:30px;\n  padding-bottom:12px;\n}\na, a:hover {\n  color:#3fb2ee;\n  text-decoration:underline;\n}\na:hover {\n  text-decoration:none;\n  color:#67cbff;\n}\n.Layout {\n  border-top:5px solid #191919;\n}\n.container {\n  margin:0 auto 30px auto;\n  width:970px;\n  padding:170px 0 0 0;\n}\n.container-border-top {\n  background:#111;\n  width:100vw;\n  display:block;\n  position:fixed;\n  left:0;\n  top:0;\n  height:5px;\n}\n.loading {\n  background-image: url('/loader_white.gif');\n  background-repeat: no-repeat;\n  background-position: center center;\n  width:100vw;\n  height:100vh;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: .9;\n  -webkit-transition: opacity .5s;\n  -o-transition: opacity .5s;\n  transition:opacity .5s;\n}\n.cm-hide {\n  opacity:0;\n}\n.cm-appear {\n  opacity: 0.01;\n}\n.cm-appear.cm-appear-active {\n   opacity: 1;\n   -webkit-transition: opacity 500ms ease-in-out;\n   -o-transition: opacity 500ms ease-in-out;\n   transition: opacity 500ms ease-in-out;\n}\n.cm-center {\n  text-align:center;\n}\n.cm-fast-appear {\n  opacity: 0.01;\n}\n.cm-fast-appear.cm-fast-appear-active {\n  opacity: 1;\n  -webkit-transition: opacity .25s ease-in-out;\n  -o-transition: opacity .25s ease-in-out;\n  transition: opacity .25s ease-in-out;\n}\n.cm-fast-enter {\n  opacity: 0.01;\n}\n.cm-fast-enter.cm-fast-enter-active {\n  opacity: 1;\n  -webkit-transition: opacity 500ms ease-in;\n  -o-transition: opacity 500ms ease-in;\n  transition: opacity 500ms ease-in;\n}\n.cm-fast-leave {\n  opacity: 1;\n}\n.cm-fast-leave.cm-fast-leave-active {\n  opacity: 0.01;\n  -webkit-transition: opacity 300ms ease-in;\n  -o-transition: opacity 300ms ease-in;\n  transition: opacity 300ms ease-in;\n}\n/* Home */\n.cm-welcome {\n  padding:0;\n  /*display:none;*/\n  background:rgba(0, 0 , 0, .5);\n  position: absolute;\n  bottom: 20%;\n  margin: 0 auto;\n  width: 760px;\n  text-align: center;\n  padding: 20px;\n  left: 50%;\n  margin-left: -400px;\n}\n.cm-welcome h1 {\n  font-weight:normal;\n  font-size:36px;\n  line-height:42px;\n}\n.cm-sr {\n  position:absolute;\n  text-indent:-9999px;\n}\n/* Work */\n.cm-btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  -webkit-transition: background .25s;\n  -o-transition: background .25s;\n  transition:background .25s;\n  text-align:center;\n  background:#3fb2ee;\n  text-decoration:none;\n  color:#fff;\n}\n.cm-btn:hover {\n  background:#67cbff;\n  color:#fff;\n}\n.cm-btn-wide {\n  padding:10px 44px;\n}\n.cm-btn-disabled {\n  background:#0c70a4 !important;\n}\n.cm-hide {\n  display:none;\n}\n.cm-m14 {\n  margin:14px;\n}\n.cm-center {\n  text-align:center;\n}\nhr {\n  border:1px solid #999;\n  height:0\n}\n/* Thumb Animations */\n#bg\n.projectOverlay {\n  background: #333;\n  background: rgba(3, 3, 3, 0.6);\n  -o-transition: opacity 250ms;\n  transition: opacity 250ms;\n  -webkit-transition: opacity 250ms;\n  -o-transition-delay:1s;\n     transition-delay:1s;\n  -webkit-transition-delay:1s;\n  opacity:0;\n  overflow:hidden;\n  position:absolute;\n  cursor:pointer;\n  top:0;\n  left:.5%;\n  z-index:2;\n  width:100%;\n  height:100%;\n}\n/* Misc */\n.clear {\n  clear:both;\n}\n.pRel {\n  position:relative;\n}\n.block {\n  display:block !important;\n}\n.dNone {\n  display:none !important;\n}\n/* */\n\n/* large displays */\n@media only screen and (min-width: 1500px) {\n  .container {\n    margin:30px auto 30px auto;\n    width:1200px;\n  }\n  .logo {\n    background:url('/imgs/chris_mills_big.png');\n    width:320px;\n    height:67px;\n    position:absolute;\n    left:180px;\n    margin:0;\n    padding:0;\n    top:77px;\n  }\n  .cm-welcome {\n    bottom:25%;\n    width:1160px;\n    margin-left:-540px;\n    width:1020px;\n    padding:30px;\n  }\n  .cm-welcome h1 {\n    font-size:50px;\n    line-height:58px;\n  }\n  .cm-textarea {\n    height:300px;\n    width:1176px !important;\n  }\n}\n\n/* Tablet & Mobile */\n@media (max-width: 768px) {\n  body {\n    background:#3d5470;\n  }\n  .Layout {\n    padding:15px;\n  }\n  .container {\n    width:auto;\n    padding:100px 0 0 0;\n    margin:0 auto;\n  }\n  .logo {\n    left:15px;\n    top:15px;\n  }\n  h1 {\n    font-size:24px;\n  }\n}\n/* Mobile */\n@media only screen and (max-width: 767px) {\n  .cm-welcome {\n    position:relative;\n    left:0;\n    top:0;\n    margin:25vh 0 0 0;\n    width:auto;\n  }\n}\n", ""]);
 
   // exports
 
