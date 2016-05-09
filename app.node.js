@@ -666,67 +666,91 @@ module.exports =
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  function Navigation() {
-    return _react2['default'].createElement(
-      'div',
-      null,
-      _react2['default'].createElement(
-        'nav',
-        { role: 'menu' },
-        _react2['default'].createElement('div', { className: 'logo' }),
+  var MainNav = _react2['default'].createClass({
+    displayName: 'MainNav',
+
+    getInitialState: function getInitialState() {
+      return {
+        shownav: false
+      };
+    },
+    openNav: function openNav() {
+      this.setState({ shownav: true });
+    },
+    closeNav: function closeNav() {
+      this.setState({ shownav: false });
+    },
+    render: function render() {
+      return _react2['default'].createElement(
+        'div',
+        null,
         _react2['default'].createElement(
-          'ul',
-          null,
+          'nav',
+          { role: 'menu', className: this.state.shownav === true ? 'cm-nav-slide' : null },
+          _react2['default'].createElement('div', { className: 'logo' }),
           _react2['default'].createElement(
-            'li',
+            'ul',
             null,
             _react2['default'].createElement(
-              'a',
-              { href: '/', onClick: _Link2['default'].handleClick },
-              'Home'
+              'li',
+              null,
+              _react2['default'].createElement(
+                'a',
+                { href: '/', onClick: _Link2['default'].handleClick },
+                'Home'
+              )
+            ),
+            _react2['default'].createElement(
+              'li',
+              null,
+              _react2['default'].createElement(
+                'a',
+                { href: '/work', onClick: _Link2['default'].handleClick },
+                'Work'
+              )
+            ),
+            _react2['default'].createElement(
+              'li',
+              null,
+              _react2['default'].createElement(
+                'a',
+                { href: '/resume', onClick: _Link2['default'].handleClick },
+                'Resumé'
+              )
+            ),
+            _react2['default'].createElement(
+              'li',
+              null,
+              _react2['default'].createElement(
+                'a',
+                { href: '/contact', onClick: _Link2['default'].handleClick },
+                'Contact'
+              )
             )
           ),
           _react2['default'].createElement(
-            'li',
-            null,
-            _react2['default'].createElement(
-              'a',
-              { href: '/work', onClick: _Link2['default'].handleClick },
-              'Work'
-            )
-          ),
-          _react2['default'].createElement(
-            'li',
-            null,
-            _react2['default'].createElement(
-              'a',
-              { href: '/resume', onClick: _Link2['default'].handleClick },
-              'Resumé'
-            )
-          ),
-          _react2['default'].createElement(
-            'li',
-            null,
-            _react2['default'].createElement(
-              'a',
-              { href: '/contact', onClick: _Link2['default'].handleClick },
-              'Contact'
-            )
+            'div',
+            { className: 'cm-close', onClick: this.closeNav },
+            '×'
           )
         ),
         _react2['default'].createElement(
           'div',
-          { className: 'cm-close' },
-          '×'
+          { className: 'cm-nav-open', onClick: this.openNav },
+          _react2['default'].createElement('span', { className: 'cm-nav-line' }),
+          _react2['default'].createElement('span', { className: 'cm-nav-line' }),
+          _react2['default'].createElement('span', { className: 'cm-nav-line' })
         )
-      ),
-      _react2['default'].createElement(
-        'div',
-        { className: 'cm-nav-open' },
-        _react2['default'].createElement('span', { className: 'cm-nav-line' }),
-        _react2['default'].createElement('span', { className: 'cm-nav-line' }),
-        _react2['default'].createElement('span', { className: 'cm-nav-line' })
-      )
+      );
+    }
+
+  });
+
+  function Navigation() {
+    return _react2['default'].createElement(
+      'div',
+      null,
+      _react2['default'].createElement(MainNav, null)
     );
   }
 
@@ -1160,7 +1184,7 @@ module.exports =
             _react2['default'].createElement(
               'p',
               null,
-              'I specialize in web and mobile web development, Javascript MVC based web applications as well as UI and web design.'
+              'I specialize in responsive web development, Javascript MVC based web applications as well as UI and web design.'
             ),
             _react2['default'].createElement(
               'p',
@@ -1367,7 +1391,7 @@ module.exports =
   												'Built a custom mobile-friendly website for ',
   												_react2['default'].createElement(
   														'a',
-  														{ href: 'http://service.com', target: ' _blank' },
+  														{ href: 'https://getservice.com', target: ' _blank' },
   														'http://service.com'
   												),
   												', powered by restful Java APIs. This site was built using Angular.js, LESS, Bootstrap and Coffeescript.'
@@ -1611,7 +1635,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nnav ul {\n  list-style:none;\n}\nnav ul li {\n  display:inline-block;\n  margin-right:40px;\n}\nnav a, nav a:hover {\n  font-size:18px;\n  color:#fff;\n  display:inline-block;\n  text-transform:uppercase;\n  text-decoration:none;\n}\nnav a:hover, nav a.active {\n  text-decoration:underline;\n}\nnav .logo {\n  display:none;\n}\n.cm-close, .cm-nav-open {\n  display:none;\n}\n@media (min-width: 768px) {\n  nav {\n    position:absolute;\n    right:75px;\n    top:83px;\n    display:block;\n  }\n}\n@media only screen and (max-width: 768px) {\n  nav {\n    display: block;\n    margin: 0;\n    position: fixed;\n    width: 80vw;\n    background: #000;\n    height: 100vh;\n    left: 0;\n    right: auto;\n    top: 0;\n    z-index: 99;\n    text-align:center;\n    left:-100vw;\n  }\n  nav.cm-nav-slide {\n    left:0;\n  }\n  nav ul li {\n    display:block;\n    margin:0;\n  }\n  nav a, nav a:hover {\n    display:block;\n    text-align:left;\n    font-size:24px;\n    float:none;\n    padding:25px 0;\n    background:#000;\n    opacity:.7;\n    text-decoration:none !important;\n    line-height:24px;\n    color:#fff;\n    width:100%;\n    margin:0 0 5px 0;\n  }\n  nav a.active {\n    opacity:1;\n  }\n  nav .logo {\n    position:relative;\n    display:inline-block;\n    top:0;\n    left:0;\n    margin-top:50px;\n  }\n  .cm-close {\n    position:absolute;\n    top:15px;\n    right:25px;\n    font-size:48px;\n    line-height:50px;\n    display:block;\n    cursor:pointer;\n  }\n  .cm-nav-open {\n    position: absolute;\n    top: 25px;\n    right: 25px;\n    width: 45px;\n    display: block;\n    cursor:pointer;\n  }\n  .cm-nav-line {\n    background: #fff;\n    height: 5px;\n    display: block;\n    margin-bottom: 8px;\n  }\n}\n@media only screen and (min-width: 1500px) {\n  nav {\n    right:145px;\n    top:77px;\n  }\n  nav a, nav a:hover {\n    font-size:24px;\n  }\n}", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nnav ul {\n  list-style:none;\n}\nnav ul li {\n  display:inline-block;\n  margin-right:40px;\n}\nnav a, nav a:hover {\n  font-size:18px;\n  color:#fff;\n  display:inline-block;\n  text-transform:uppercase;\n  text-decoration:none;\n}\nnav a:hover, nav a.active {\n  text-decoration:underline;\n}\nnav .logo {\n  display:none;\n}\n.cm-close, .cm-nav-open {\n  display:none;\n}\n@media (min-width: 768px) {\n  nav {\n    position:absolute;\n    right:75px;\n    top:83px;\n    display:block;\n  }\n}\n@media only screen and (max-width: 768px) {\n  nav {\n    display: block;\n    margin: 0;\n    position: fixed;\n    width: 80vw;\n    background: #000;\n    height: 100vh;\n    left: 0;\n    right: auto;\n    top: 0;\n    z-index: 99;\n    text-align:center;\n    left:-100vw;\n    -webkit-transition: all .25s ease-in-out;\n    -o-transition: all .25s ease-in-out;\n    transition: all .25s ease-in-out;\n  }\n  nav.cm-nav-slide {\n    left:0;\n  }\n  nav ul li {\n    display:block;\n    margin:0;\n  }\n  nav a, nav a:hover {\n    display:block;\n    text-align:left;\n    font-size:24px;\n    float:none;\n    padding:25px 0;\n    background:#000;\n    opacity:.7;\n    text-decoration:none !important;\n    line-height:24px;\n    color:#fff;\n    width:100%;\n    margin:0 0 5px 0;\n  }\n  nav a.active {\n    opacity:1;\n  }\n  nav .logo {\n    position:relative;\n    display:inline-block;\n    top:0;\n    left:0;\n    margin-top:50px;\n  }\n  .cm-close {\n    background:url('/close.png') no-repeat;\n    position:absolute;\n    top:15px;\n    right:25px;\n    width:20px;\n    height:20px;\n    display:block;\n    cursor:pointer;\n    text-indent:-9999px\n  }\n  .cm-nav-open {\n    position: absolute;\n    top: 25px;\n    right: 25px;\n    width: 45px;\n    display: block;\n    cursor:pointer;\n  }\n  .cm-nav-line {\n    background: #fff;\n    height: 5px;\n    display: block;\n    margin-bottom: 8px;\n  }\n}\n@media only screen and (min-width: 1500px) {\n  nav {\n    right:145px;\n    top:77px;\n  }\n  nav a, nav a:hover {\n    font-size:24px;\n  }\n}", ""]);
 
   // exports
 
@@ -1625,7 +1649,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.cm-overlay {\n\tposition:fixed;\n\twidth:100vw;\n\theight:100vh;\n\tbackground:rgb(0, 0, 0);\n\tbackground:rgba(0, 0, 0, .7);\n\ttop:0;\n\tleft:0;\n\tz-index:99;\n}\n.cm-overlay-content {\n\tmargin:0 auto;\n\twidth:970px;\n\tposition:relative;\n\tbackground:#000;\n\tmin-height:100vh;\n\theight:100%;\n\tpadding:20px 10px;\n}\n.cm-overlay h2 {\n\tbackground:none;\n\tpadding-top:50px;\n\tpadding-bottom:20px;\n}\n.cm-overlay h2, .cm-overlay p {\n\tposition:relative;\n\ttop:0;\n}\n.cm-overlay-img-mask {\n\tmax-height:60vh;\n\toverflow:hidden;\n\tmargin:20px 0 0 0;\n\tposition:relative;\n}\n.cm-overlay-close {\n\tfont-size: 60px;\n    line-height: 15px;\n    display: block;\n    text-align: right;\n}\n.cm-overlay-img {\n\topacity:1;\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition: all .5s ease-in-out;\n}\n.cm-img-loading {\n\topacity:.01;\n}\n.cm-overlay-img-loading {\n\tbackground-image: url('/loading.svg');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center center;\n\ttop:10vh;\n\tposition:absolute;\n\tleft:50%;\n\twidth:50px;\n\tmargin-left:-25px;\n\tmin-height:300px;\n\tz-index:2;\n}\n@media (max-width: 768px) {\n\t.cm-overlay-content {\n\t\twidth:auto;\n\t}\n}", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.cm-overlay {\n\tposition:fixed;\n\twidth:100vw;\n\theight:100vh;\n\tbackground:rgb(0, 0, 0);\n\tbackground:rgba(0, 0, 0, .7);\n\ttop:0;\n\tleft:0;\n\tz-index:99;\n}\n.cm-overlay-content {\n\tmargin:0 auto;\n\twidth:970px;\n\tposition:relative;\n\tbackground:#000;\n\tmin-height:100vh;\n\theight:100%;\n\tpadding:20px 10px;\n}\n.cm-overlay h2 {\n\tbackground:none;\n\tpadding-top:50px;\n\tpadding-bottom:20px;\n}\n.cm-overlay h2, .cm-overlay p {\n\tposition:relative;\n\ttop:0;\n}\n.cm-overlay-img-mask {\n\tmax-height:60vh;\n\toverflow:hidden;\n\tmargin:20px 0 0 0;\n\tposition:relative;\n}\n.cm-overlay-close {\n\tbackground:url('/close.png') no-repeat;\n\twidth:20px;\n\theight:20px;\n    display: block;\n    text-align: right;\n    cursor:pointer;\n}\n.cm-overlay-img {\n\topacity:1;\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition: all .5s ease-in-out;\n}\n.cm-img-loading {\n\topacity:.01;\n}\n.cm-overlay-img-loading {\n\tbackground-image: url('/loading.svg');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center center;\n\ttop:10vh;\n\tposition:absolute;\n\tleft:50%;\n\twidth:50px;\n\tmargin-left:-25px;\n\tmin-height:300px;\n\tz-index:2;\n}\n@media (max-width: 768px) {\n\t.cm-overlay-content {\n\t\twidth:auto;\n\t}\n}", ""]);
 
   // exports
 
