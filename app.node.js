@@ -1388,7 +1388,7 @@ module.exports =
   												_react2['default'].createElement(
   														'a',
   														{ href: 'https://getservice.com', target: ' _blank' },
-  														'http://service.com'
+  														'http://getservice.com'
   												),
   												', powered by restful Java APIs. This site was built using Angular.js, LESS, Bootstrap and Coffeescript.'
   										),
