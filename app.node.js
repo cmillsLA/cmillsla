@@ -1360,14 +1360,29 @@ module.exports =
   												_react2['default'].createElement('br', null),
   												'Sr. Front End Developer ( February 2014 - present )',
   												_react2['default'].createElement('br', null),
+  												'Maintain and extend javascript ad API with monthly traffic in the billions, used by most news and brand sites.',
+  												_react2['default'].createElement('br', null),
   												'Clientside UI Integration, html5 localstorage shopping cart development and integration and front end development for ',
   												_react2['default'].createElement(
   														'a',
   														{ href: 'https://www.nbcumv.com/', target: ' _blank' },
   														'https://www.nbcumv.com/'
+  												)
+  										),
+  										_react2['default'].createElement(
+  												'p',
+  												null,
+  												_react2['default'].createElement(
+  														'strong',
+  														null,
+  														'Leaf Group'
   												),
   												_react2['default'].createElement('br', null),
-  												'Maintain and extend javascript ad API used by most news and brand sites.'
+  												'Sr. Front End Engineer ( November 2015 – May 2016 ) – Part time contract',
+  												_react2['default'].createElement('br', null),
+  												'Intranet – html5/css3 into the Zendesk CMS.  Utilized Zendesk API as well as internal endpoints to create a custom people directory and navigation.',
+  												_react2['default'].createElement('br', null),
+  												'Pixel tracking – Reverse engineered and extended pixel tracking script used across all sites (eHow, Saatchi Art, Society 6, etc.).'
   										),
   										_react2['default'].createElement(
   												'p',
