@@ -863,31 +863,6 @@ module.exports =
 
   var ReactCSSTransitionGroup = __webpack_require__(3);
 
-  var ProjectThumb = _react2['default'].createClass({
-    displayName: 'ProjectThumb',
-
-    getInitialState: function getInitialState() {
-      return {
-        loading: true
-      };
-    },
-    handleImageLoaded: function handleImageLoaded() {
-      console.log('image loaded!');
-      this.setState({ loading: 'loaded' });
-    },
-    render: function render() {
-      var _this = this;
-      var _img = _this.props.data;
-      var _index = _this.props.index;
-      return _react2['default'].createElement(
-        'div',
-        null,
-        _react2['default'].createElement('img', { src: _img, className: _this.state.loading === 'loaded' ? 'cm-overlay-img' : 'cm-overlay-img cm-img-loading', onLoad: _this.handleImageLoaded })
-      );
-    }
-
-  });
-
   var Project = _react2['default'].createClass({
     displayName: 'Project',
 
@@ -907,7 +882,14 @@ module.exports =
     render: function render() {
       var _this = this;
       var _projects = [];
+      var filters = [];
       var projects = this.props.data.map(function (project, i) {
+        for (var j = 0; j < project.categories.length; j += 1) {
+          var _cat = project.categories[j].name;
+          if (filters.indexOf(_cat) === -1) {
+            filters.push(_cat);
+          }
+        }
         _projects.push(project);
         return _react2['default'].createElement(
           ReactCSSTransitionGroup,
@@ -928,7 +910,7 @@ module.exports =
                 { className: 'project-fade project-slide-in' },
                 project.summary
               ),
-              _react2['default'].createElement(ProjectThumb, { data: project.thumb, index: i, onClick: _this.handleClick.bind(null, project.name) }),
+              _react2['default'].createElement('img', { src: project.thumb }),
               _react2['default'].createElement(
                 'button',
                 { className: 'project-fade cm-btn', onClick: _this.handleClick.bind(null, project.name) },
@@ -957,14 +939,14 @@ module.exports =
     },
     componentDidMount: function componentDidMount() {
       var _this = this;
-      var _host = window.location.host.indexOf('localhost') > -1 ? 'http://localhost:3000' : 'https://cmillsla-cmills83.rhcloud.com';
-      _host = 'https://cmillsla-cmills83.rhcloud.com';
+      var _host = 'https://cmillsla-cmills83.rhcloud.com';
       var xhr = new XMLHttpRequest();
       xhr.open('GET', encodeURI(_host + '/api/posts'));
       xhr.onload = function (data) {
         if (xhr.status === 200) {
           if (xhr.responseText) {
             var _response = JSON.parse(xhr.responseText);
+            console.log(_response);
             if (_response.success === true) {
               var _data = [];
               for (var i = 0; i < _response.result.length; i += 1) {
@@ -974,7 +956,8 @@ module.exports =
                   summary: _response.result[i].content.brief.replace(/(<([^>]+)>)/ig, ''),
                   thumb: _response.result[i].thumb.url,
                   image: _response.result[i].image.url,
-                  url: _response.result[i].url ? _response.result[i].url : null
+                  url: _response.result[i].url ? _response.result[i].url : null,
+                  categories: _response.result[i].categories
                 };
                 _data.push(_result);
               }
@@ -994,7 +977,6 @@ module.exports =
         _react2['default'].createElement(
           'div',
           null,
-          this.state.data && !this.state.data.length ? _react2['default'].createElement('div', { className: 'cm-work-img-loading' }) : null,
           _react2['default'].createElement(Project, { data: this.state.data })
         )
       );
@@ -1668,7 +1650,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.cm-overlay {\n\tposition:fixed;\n\twidth:100vw;\n\theight:100vh;\n\tbackground:rgb(0, 0, 0);\n\tbackground:rgba(0, 0, 0, .7);\n\ttop:0;\n\tleft:0;\n\tz-index:99;\n}\n.cm-overlay-content {\n\tmargin:0 auto;\n\twidth:970px;\n\tposition:relative;\n\tbackground:#000;\n\tmin-height:100vh;\n\theight:100%;\n\tpadding:20px 10px;\n}\n.cm-overlay h2 {\n\tbackground:none;\n\tpadding-top:50px;\n\tpadding-bottom:20px;\n}\n.cm-overlay h2, .cm-overlay p {\n\tposition:relative;\n\ttop:0;\n}\n.cm-overlay-img-mask {\n\tmax-height:60vh;\n\toverflow:hidden;\n\tmargin:20px 0 0 0;\n\tposition:relative;\n}\n.cm-overlay-close {\n\tbackground:url('/close.png') no-repeat;\n\twidth:20px;\n\theight:20px;\n    display: block;\n    text-align: right;\n    cursor:pointer;\n    width:100%;\n    background-position:top right;\n    font-size:0;\n}\n.cm-overlay-img {\n\topacity:1;\n\t-webkit-transition: all 1s ease-in-out;\n\t-o-transition: all 1s ease-in-out;\n\ttransition: all 1s ease-in-out;\n}\n.cm-img-loading {\n\topacity:.01;\n}\n.cm-overlay-img-loading, .cm-work-img-loading {\n\tbackground-image: url('/loading.svg');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center center;\n\ttop:10vh;\n\tposition:absolute;\n\tleft:50%;\n\twidth:50px;\n\tmargin-left:-25px;\n\tmin-height:300px;\n\tz-index:2;\n}\n.cm-work-img-loading {\n\ttop:20vh;\n}\n@media (max-width: 768px) {\n\t.cm-overlay-content {\n\t\twidth:auto;\n\t}\n}", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.cm-overlay {\n\tposition:fixed;\n\twidth:100vw;\n\theight:100vh;\n\tbackground:rgb(0, 0, 0);\n\tbackground:rgba(0, 0, 0, .7);\n\ttop:0;\n\tleft:0;\n\tz-index:99;\n}\n.cm-overlay-content {\n\tmargin:0 auto;\n\twidth:970px;\n\tposition:relative;\n\tbackground:#000;\n\tmin-height:100vh;\n\theight:100%;\n\tpadding:20px 10px;\n}\n.cm-overlay h2 {\n\tbackground:none;\n\tpadding-top:50px;\n\tpadding-bottom:20px;\n}\n.cm-overlay h2, .cm-overlay p {\n\tposition:relative;\n\ttop:0;\n}\n.cm-overlay-img-mask {\n\tmax-height:60vh;\n\toverflow:hidden;\n\tmargin:20px 0 0 0;\n\tposition:relative;\n}\n.cm-overlay-close {\n\tbackground:url('/close.png') no-repeat;\n\twidth:20px;\n\theight:20px;\n    display: block;\n    text-align: right;\n    cursor:pointer;\n    width:100%;\n    background-position:top right;\n    font-size:0;\n}\n.cm-overlay-img {\n\topacity:1;\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition: all .5s ease-in-out;\n}\n.cm-img-loading {\n\topacity:.01;\n}\n.cm-overlay-img-loading {\n\tbackground-image: url('/loading.svg');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center center;\n\ttop:10vh;\n\tposition:absolute;\n\tleft:50%;\n\twidth:50px;\n\tmargin-left:-25px;\n\tmin-height:300px;\n\tz-index:2;\n}\n@media (max-width: 768px) {\n\t.cm-overlay-content {\n\t\twidth:auto;\n\t}\n}", ""]);
 
   // exports
 
