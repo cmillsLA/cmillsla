@@ -696,15 +696,6 @@ module.exports =
               null,
               _react2['default'].createElement(
                 'a',
-                { href: '/', onClick: _Link2['default'].handleClick },
-                'Home'
-              )
-            ),
-            _react2['default'].createElement(
-              'li',
-              null,
-              _react2['default'].createElement(
-                'a',
                 { href: '/work', onClick: _Link2['default'].handleClick },
                 'Work'
               )
