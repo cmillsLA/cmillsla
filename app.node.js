@@ -65,7 +65,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(29);
+  var _reactDom = __webpack_require__(32);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -79,23 +79,25 @@ module.exports =
 
   var _coreLocation2 = _interopRequireDefault(_coreLocation);
 
-  var _componentsLayout = __webpack_require__(8);
+  var _componentsLayout = __webpack_require__(9);
 
   var _componentsLayout2 = _interopRequireDefault(_componentsLayout);
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(13);
-    }, '/500': function _() {
       return __webpack_require__(14);
-    }, '/contact': function contact() {
+    }, '/500': function _() {
       return __webpack_require__(15);
-    }, '/': function _() {
+    }, '/contact': function contact() {
       return __webpack_require__(16);
-    }, '/resume': function resume() {
+    }, '/furniture': function furniture() {
       return __webpack_require__(17);
-    }, '/work': function work() {
+    }, '/': function _() {
       return __webpack_require__(18);
+    }, '/resume': function resume() {
+      return __webpack_require__(19);
+    }, '/work': function work() {
+      return __webpack_require__(20);
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function route(path, callback) {
@@ -270,7 +272,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(21);
+  __webpack_require__(24);
 
   var _coreLocation = __webpack_require__(5);
 
@@ -371,15 +373,15 @@ module.exports =
 
   var _fbjsLibExecutionEnvironment = __webpack_require__(6);
 
-  var _historyLibCreateBrowserHistory = __webpack_require__(26);
+  var _historyLibCreateBrowserHistory = __webpack_require__(29);
 
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
 
-  var _historyLibCreateMemoryHistory = __webpack_require__(27);
+  var _historyLibCreateMemoryHistory = __webpack_require__(30);
 
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
 
-  var _historyLibUseQueries = __webpack_require__(28);
+  var _historyLibUseQueries = __webpack_require__(31);
 
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
 
@@ -417,7 +419,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(19);
+  __webpack_require__(21);
 
   var ContactForm = _react2['default'].createClass({
     displayName: 'ContactForm',
@@ -534,6 +536,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   /**
+  /**
    * React Static Boilerplate
    * https://github.com/koistya/react-static-boilerplate
    * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
@@ -551,13 +554,62 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(20);
+  __webpack_require__(22);
 
-  var _Navigation = __webpack_require__(10);
+  var _Link = __webpack_require__(4);
+
+  var _Link2 = _interopRequireDefault(_Link);
+
+  var Furniture = _react2['default'].createClass({
+    displayName: 'Furniture',
+
+    getInitialState: function getInitialState() {
+      return {
+        shownav: false
+      };
+    },
+    render: function render() {
+      return _react2['default'].createElement(
+        'div',
+        null,
+        'Tester'
+      );
+    }
+
+  });
+
+  exports['default'] = Furniture;
+  module.exports = exports['default'];
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+  /**
+   * React Static Boilerplate
+   * https://github.com/koistya/react-static-boilerplate
+   * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+   */
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(23);
+
+  var _Navigation = __webpack_require__(11);
 
   var _Navigation2 = _interopRequireDefault(_Navigation);
 
-  var _Logo = __webpack_require__(9);
+  var _Logo = __webpack_require__(10);
 
   var _Logo2 = _interopRequireDefault(_Logo);
 
@@ -590,7 +642,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -611,7 +663,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(22);
+  __webpack_require__(25);
 
   var _Link = __webpack_require__(4);
 
@@ -638,7 +690,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -660,7 +712,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(23);
+  __webpack_require__(26);
 
   var _Link = __webpack_require__(4);
 
@@ -745,7 +797,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -760,7 +812,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(24);
+  __webpack_require__(27);
 
   var _Link = __webpack_require__(4);
 
@@ -827,7 +879,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -842,13 +894,13 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(25);
+  __webpack_require__(28);
 
   var _Link = __webpack_require__(4);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  var _Overlay = __webpack_require__(11);
+  var _Overlay = __webpack_require__(12);
 
   var _Overlay2 = _interopRequireDefault(_Overlay);
 
@@ -979,7 +1031,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1044,7 +1096,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1115,7 +1167,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1196,7 +1248,71 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+  		value: true
+  });
+
+  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _componentsFurniture = __webpack_require__(8);
+
+  var _componentsFurniture2 = _interopRequireDefault(_componentsFurniture);
+
+  var ReactCSSTransitionGroup = __webpack_require__(3);
+
+  var _default = (function (_Component) {
+  		_inherits(_default, _Component);
+
+  		function _default() {
+  				_classCallCheck(this, _default);
+
+  				_get(Object.getPrototypeOf(_default.prototype), 'constructor', this).apply(this, arguments);
+  		}
+
+  		_createClass(_default, [{
+  				key: 'render',
+  				value: function render() {
+  						return _react2['default'].createElement(
+  								'div',
+  								null,
+  								_react2['default'].createElement(
+  										ReactCSSTransitionGroup,
+  										{ transitionName: 'cm', transitionAppear: true },
+  										_react2['default'].createElement(
+  												'h1',
+  												null,
+  												'Furniture'
+  										)
+  								)
+  						);
+  				}
+  		}]);
+
+  		return _default;
+  })(_react.Component);
+
+  exports['default'] = _default;
+  module.exports = exports['default'];
+
+/***/ },
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1266,7 +1382,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1503,7 +1619,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1532,7 +1648,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _componentsProjects = __webpack_require__(12);
+  var _componentsProjects = __webpack_require__(13);
 
   var _componentsProjects2 = _interopRequireDefault(_componentsProjects);
 
@@ -1578,7 +1694,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -1592,49 +1708,7 @@ module.exports =
 
 
 /***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\nhtml, body {\n  margin:0;\n  padding:0;\n}\nbody {\n  background: #3d5470;\n  color:#fff;\n  font-family: \"prox\", Helvetica, sans-serif;\n}\nh1 {\n  font-size:normal;\n}\np {\n  font-size:18px;\n  line-height:30px;\n  padding-bottom:12px;\n}\na, a:hover {\n  color:#3fb2ee;\n  text-decoration:underline;\n}\na:hover {\n  text-decoration:none;\n  color:#67cbff;\n}\n.Layout {\n  border-top:5px solid #191919;\n}\n.container {\n  margin:0 auto 30px auto;\n  width:970px;\n  padding:170px 0 0 0;\n}\n.container-border-top {\n  background:#111;\n  width:100vw;\n  display:block;\n  position:fixed;\n  left:0;\n  top:0;\n  height:5px;\n}\n.loading {\n  background-image: url('/loading.svg');\n  background-repeat: no-repeat;\n  background-position: center center;\n  width:100vw;\n  height:100vh;\n  background-color: #222;\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: .9;\n  -webkit-transition: opacity .5s;\n  -o-transition: opacity .5s;\n  transition:opacity .5s;\n}\n.cm-hide {\n  opacity:0;\n}\n.cm-appear {\n  opacity: 0.01;\n}\n.cm-appear.cm-appear-active {\n   opacity: 1;\n   -webkit-transition: opacity 500ms ease-in-out;\n   -o-transition: opacity 500ms ease-in-out;\n   transition: opacity 500ms ease-in-out;\n}\n.cm-center {\n  text-align:center;\n}\n.cm-fast-appear {\n  opacity: 0.01;\n}\n.cm-fast-appear.cm-fast-appear-active {\n  opacity: 1;\n  -webkit-transition: opacity .25s ease-in-out;\n  -o-transition: opacity .25s ease-in-out;\n  transition: opacity .25s ease-in-out;\n}\n.cm-fast-enter {\n  opacity: 0.01;\n}\n.cm-fast-enter.cm-fast-enter-active {\n  opacity: 1;\n  -webkit-transition: opacity 500ms ease-in;\n  -o-transition: opacity 500ms ease-in;\n  transition: opacity 500ms ease-in;\n}\n.cm-fast-leave {\n  opacity: 1;\n}\n.cm-fast-leave.cm-fast-leave-active {\n  opacity: 0.01;\n  -webkit-transition: opacity 300ms ease-in;\n  -o-transition: opacity 300ms ease-in;\n  transition: opacity 300ms ease-in;\n}\n/* Home */\n.cm-welcome {\n  padding:0;\n  /*display:none;*/\n  background:rgba(0, 0 , 0, .5);\n  position: absolute;\n  bottom: 20%;\n  margin: 0 auto;\n  width: 760px;\n  text-align: center;\n  padding: 20px;\n  left: 50%;\n  margin-left: -400px;\n}\n.cm-welcome h1 {\n  font-weight:normal;\n  font-size:36px;\n  line-height:42px;\n}\n.cm-sr {\n  position:absolute;\n  text-indent:-9999px;\n}\n/* Work */\n.cm-btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  -webkit-transition: background .25s;\n  -o-transition: background .25s;\n  transition:background .25s;\n  text-align:center;\n  background:#3fb2ee;\n  text-decoration:none;\n  color:#fff;\n}\n.cm-btn:hover {\n  background:#67cbff;\n  color:#fff;\n}\n.cm-btn-wide {\n  padding:10px 44px;\n}\n.cm-btn-disabled {\n  background:#0c70a4 !important;\n}\n.cm-hide {\n  display:none;\n}\n.cm-m14 {\n  margin:14px;\n}\n.cm-center {\n  text-align:center;\n}\nhr {\n  border:1px solid #999;\n  height:0\n}\n/* Thumb Animations */\n#bg\n.projectOverlay {\n  background: #333;\n  background: rgba(3, 3, 3, 0.6);\n  -o-transition: opacity 250ms;\n  transition: opacity 250ms;\n  -webkit-transition: opacity 250ms;\n  -o-transition-delay:1s;\n     transition-delay:1s;\n  -webkit-transition-delay:1s;\n  opacity:0;\n  overflow:hidden;\n  position:absolute;\n  cursor:pointer;\n  top:0;\n  left:.5%;\n  z-index:2;\n  width:100%;\n  height:100%;\n}\n/* Misc */\n.clear {\n  clear:both;\n}\n.pRel {\n  position:relative;\n}\n.block {\n  display:block !important;\n}\n.dNone {\n  display:none !important;\n}\n/* */\n\n/* large displays */\n@media only screen and (min-width: 1500px) {\n  .container {\n    margin:30px auto 30px auto;\n    width:1200px;\n  }\n  .logo {\n    background:url('/imgs/chris_mills_big.png');\n    width:320px;\n    height:67px;\n    position:absolute;\n    left:180px;\n    margin:0;\n    padding:0;\n    top:77px;\n  }\n  .cm-welcome {\n    bottom:25%;\n    width:1160px;\n    margin-left:-540px;\n    width:1020px;\n    padding:30px;\n  }\n  .cm-welcome h1 {\n    font-size:50px;\n    line-height:58px;\n  }\n  .cm-textarea {\n    height:300px;\n    width:1176px !important;\n  }\n}\n\n/* Tablet & Mobile */\n@media (max-width: 768px) {\n  body {\n    background:#3d5470;\n  }\n  .Layout {\n    padding:15px;\n  }\n  .container {\n    width:auto;\n    padding:100px 0 0 0;\n    margin:0 auto;\n  }\n  .logo {\n    left:15px;\n    top:15px;\n  }\n  h1 {\n    font-size:24px;\n  }\n}\n/* Tablet Portrait */\n@media all and (max-width: 1024px) and (min-width: 768px) {\n  nav {\n    right:0 !important;\n  }\n  .logo {\n    left:20px !important;\n  }\n}\n\n/* Mobile */\n@media only screen and (max-width: 767px) {\n  .cm-welcome {\n    position:relative;\n    left:0;\n    top:0;\n    margin:25vh 0 0 0;\n    width:auto;\n  }\n}\n", ""]);
-
-  // exports
-
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "", ""]);
-
-  // exports
-
-
-/***/ },
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-
-
-  // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.logo {\n  background:url('/chris_mills.png') no-repeat;\n  width:278px;\n  height:60px;\n  position:absolute;\n  left:110px;\n  margin:0;\n  padding:0;\n  top:77px;\n}\n\n.logo a{\n  position:absolute;\n  left:0;\n  top:0;\n  width:100%;\n  height:100%;\n  display:block;\n  outline:none;\n}\n\n.logo span {\n  position:absolute;\n  text-indent:-9999px;\n}\n\n@media (max-width: 768px) {\n  .logo {\n    left:5px;\n    top:50px;\n  }\n}", ""]);
-
-  // exports
-
-
-/***/ },
-/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -1648,6 +1722,20 @@ module.exports =
 
 
 /***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\nhtml, body {\n  margin:0;\n  padding:0;\n}\nbody {\n  background: #3d5470;\n  color:#fff;\n  font-family: \"prox\", Helvetica, sans-serif;\n}\nh1 {\n  font-size:normal;\n}\np {\n  font-size:18px;\n  line-height:30px;\n  padding-bottom:12px;\n}\na, a:hover {\n  color:#3fb2ee;\n  text-decoration:underline;\n}\na:hover {\n  text-decoration:none;\n  color:#67cbff;\n}\n.Layout {\n  border-top:5px solid #191919;\n}\n.container {\n  margin:0 auto 30px auto;\n  width:970px;\n  padding:170px 0 0 0;\n}\n.container-border-top {\n  background:#111;\n  width:100vw;\n  display:block;\n  position:fixed;\n  left:0;\n  top:0;\n  height:5px;\n}\n.loading {\n  background-image: url('/loading.svg');\n  background-repeat: no-repeat;\n  background-position: center center;\n  width:100vw;\n  height:100vh;\n  background-color: #222;\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: .9;\n  -webkit-transition: opacity .5s;\n  -o-transition: opacity .5s;\n  transition:opacity .5s;\n}\n.cm-hide {\n  opacity:0;\n}\n.cm-appear {\n  opacity: 0.01;\n}\n.cm-appear.cm-appear-active {\n   opacity: 1;\n   -webkit-transition: opacity 500ms ease-in-out;\n   -o-transition: opacity 500ms ease-in-out;\n   transition: opacity 500ms ease-in-out;\n}\n.cm-center {\n  text-align:center;\n}\n.cm-fast-appear {\n  opacity: 0.01;\n}\n.cm-fast-appear.cm-fast-appear-active {\n  opacity: 1;\n  -webkit-transition: opacity .25s ease-in-out;\n  -o-transition: opacity .25s ease-in-out;\n  transition: opacity .25s ease-in-out;\n}\n.cm-fast-enter {\n  opacity: 0.01;\n}\n.cm-fast-enter.cm-fast-enter-active {\n  opacity: 1;\n  -webkit-transition: opacity 500ms ease-in;\n  -o-transition: opacity 500ms ease-in;\n  transition: opacity 500ms ease-in;\n}\n.cm-fast-leave {\n  opacity: 1;\n}\n.cm-fast-leave.cm-fast-leave-active {\n  opacity: 0.01;\n  -webkit-transition: opacity 300ms ease-in;\n  -o-transition: opacity 300ms ease-in;\n  transition: opacity 300ms ease-in;\n}\n/* Home */\n.cm-welcome {\n  padding:0;\n  /*display:none;*/\n  background:rgba(0, 0 , 0, .5);\n  position: absolute;\n  bottom: 20%;\n  margin: 0 auto;\n  width: 760px;\n  text-align: center;\n  padding: 20px;\n  left: 50%;\n  margin-left: -400px;\n}\n.cm-welcome h1 {\n  font-weight:normal;\n  font-size:36px;\n  line-height:42px;\n}\n.cm-sr {\n  position:absolute;\n  text-indent:-9999px;\n}\n/* Work */\n.cm-btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  -webkit-transition: background .25s;\n  -o-transition: background .25s;\n  transition:background .25s;\n  text-align:center;\n  background:#3fb2ee;\n  text-decoration:none;\n  color:#fff;\n}\n.cm-btn:hover {\n  background:#67cbff;\n  color:#fff;\n}\n.cm-btn-wide {\n  padding:10px 44px;\n}\n.cm-btn-disabled {\n  background:#0c70a4 !important;\n}\n.cm-hide {\n  display:none;\n}\n.cm-m14 {\n  margin:14px;\n}\n.cm-center {\n  text-align:center;\n}\nhr {\n  border:1px solid #999;\n  height:0\n}\n/* Thumb Animations */\n#bg\n.projectOverlay {\n  background: #333;\n  background: rgba(3, 3, 3, 0.6);\n  -o-transition: opacity 250ms;\n  transition: opacity 250ms;\n  -webkit-transition: opacity 250ms;\n  -o-transition-delay:1s;\n     transition-delay:1s;\n  -webkit-transition-delay:1s;\n  opacity:0;\n  overflow:hidden;\n  position:absolute;\n  cursor:pointer;\n  top:0;\n  left:.5%;\n  z-index:2;\n  width:100%;\n  height:100%;\n}\n/* Misc */\n.clear {\n  clear:both;\n}\n.pRel {\n  position:relative;\n}\n.block {\n  display:block !important;\n}\n.dNone {\n  display:none !important;\n}\n/* */\n\n/* large displays */\n@media only screen and (min-width: 1500px) {\n  .container {\n    margin:30px auto 30px auto;\n    width:1200px;\n  }\n  .logo {\n    background:url('/imgs/chris_mills_big.png');\n    width:320px;\n    height:67px;\n    position:absolute;\n    left:180px;\n    margin:0;\n    padding:0;\n    top:77px;\n  }\n  .cm-welcome {\n    bottom:25%;\n    width:1160px;\n    margin-left:-540px;\n    width:1020px;\n    padding:30px;\n  }\n  .cm-welcome h1 {\n    font-size:50px;\n    line-height:58px;\n  }\n  .cm-textarea {\n    height:300px;\n    width:1176px !important;\n  }\n}\n\n/* Tablet & Mobile */\n@media (max-width: 768px) {\n  body {\n    background:#3d5470;\n  }\n  .Layout {\n    padding:15px;\n  }\n  .container {\n    width:auto;\n    padding:100px 0 0 0;\n    margin:0 auto;\n  }\n  .logo {\n    left:15px;\n    top:15px;\n  }\n  h1 {\n    font-size:24px;\n  }\n}\n/* Tablet Portrait */\n@media all and (max-width: 1024px) and (min-width: 768px) {\n  nav {\n    right:0 !important;\n  }\n  .logo {\n    left:20px !important;\n  }\n}\n\n/* Mobile */\n@media only screen and (max-width: 767px) {\n  .cm-welcome {\n    position:relative;\n    left:0;\n    top:0;\n    margin:25vh 0 0 0;\n    width:auto;\n  }\n}\n", ""]);
+
+  // exports
+
+
+/***/ },
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1656,7 +1744,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.cm-overlay {\n\tposition:fixed;\n\twidth:100vw;\n\theight:100vh;\n\tbackground:rgb(0, 0, 0);\n\tbackground:rgba(0, 0, 0, .7);\n\ttop:0;\n\tleft:0;\n\tz-index:99;\n}\n.cm-overlay-content {\n\tmargin:0 auto;\n\twidth:970px;\n\tposition:relative;\n\tbackground:#000;\n\tmin-height:100vh;\n\theight:100%;\n\tpadding:20px 10px;\n}\n.cm-overlay h2 {\n\tbackground:none;\n\tpadding-top:50px;\n\tpadding-bottom:20px;\n}\n.cm-overlay h2, .cm-overlay p {\n\tposition:relative;\n\ttop:0;\n}\n.cm-overlay-img-mask {\n\tmax-height:60vh;\n\toverflow:hidden;\n\tmargin:20px 0 0 0;\n\tposition:relative;\n}\n.cm-overlay-close {\n\tbackground:url('/close.png') no-repeat;\n\twidth:20px;\n\theight:20px;\n    display: block;\n    text-align: right;\n    cursor:pointer;\n    width:100%;\n    background-position:top right;\n    font-size:0;\n}\n.cm-overlay-img {\n\topacity:1;\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition: all .5s ease-in-out;\n}\n.cm-img-loading {\n\topacity:.01;\n}\n.cm-overlay-img-loading {\n\tbackground-image: url('/loading.svg');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center center;\n\ttop:10vh;\n\tposition:absolute;\n\tleft:50%;\n\twidth:50px;\n\tmargin-left:-25px;\n\tmin-height:300px;\n\tz-index:2;\n}\n@media (max-width: 768px) {\n\t.cm-overlay-content {\n\t\twidth:auto;\n\t}\n}", ""]);
+  exports.push([module.id, "", ""]);
 
   // exports
 
@@ -1670,31 +1758,73 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n.project {\n  background:#000;\n  width:24%;\n  margin:.5%;\n  float:left;\n  -webkit-box-shadow:0 0 5px #444;\n          box-shadow:0 0 5px #444;\n}\n.project-fade {\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition:all .5s ease-in-out;\n\topacity:0;\n}\n.project-shade {\n\tposition:absolute;\n\tz-index:1;\n\tleft:0;\n\ttop:0;\n\twidth:100%;\n\theight:100%;\n\tbackground:rgba(0, 0, 0, .7);\n\tdisplay:block;\n\topacity:0;\n}\n.project-shade div {\n\tdisplay:none;\n}\n.project {\n\tposition:relative;\n\toverflow:hidden;\n}\n.project h2 {\n\tfont-size:18px;\n\tposition:absolute;\n\ttop:0;\n\twidth:100%;\n\tmargin:0;\n\tpadding:20px 10px;\n\tz-index:2;\n\tbackground:#000;\n}\n.project p {\n\tdisplay:block;\n\tmargin:0;\n\tpadding:0 15px;\n\tposition:absolute;\n\ttop:90px;\n\tfont-size:14px;\n\tline-height:18px;\n\tfont-weight:normal;\n\tz-index:2;\n\t-webkit-transition-delay: .25s;\n\t     -o-transition-delay: .25s;\n\t        transition-delay: .25s;\n\twidth:90%;\n}\n.project img {\n\tposition:relative;\n\tz-index:0;\n\tdisplay:block;\n\twidth:100%;\n\theight:auto;\n}\n.project button {\n\tposition:absolute;\n\tbottom:-50px;\n\tleft:50%;\n\twidth:80px;\n\tmargin-left:-40px;\n\topacity:0;\n\tz-index:2;\n}\n.project:hover\n.project-fade {\n\topacity:1;\n}\n.project\n.project-slide-in {\n\tleft:-100%;\n}\n.project:hover\n.project-slide-in {\n\tleft:0;\n}\n.project:hover\nbutton {\n\tbottom:20px;\n}\n@media only screen and (min-width: 1500px) {\n\t.project h2 {\n\t\tfont-size:24px;\n\t}\n\t.project p {\n\t\tfont-size:18px;\n\t\tline-height:26px;\n\t}\n}\n@media (max-width: 768px) {\n\t.project {\n\t\twidth:32%;\n\t}\n\t.project h2 {\n\t\tleft:0 !important;\n\t\topacity:1 !important;\n\t}\n\t.project-shade {\n\t\topacity:.9;\n\t\twidth: 100%;\n\t    height: 100%;\n\t    padding-bottom: 25%;\n\t    padding-left: 25%;\n\t    overflow: hidden;\n\t    display:block;\n\t}\n\t.project-shade div {\n\t\twidth:50%;\n\t\theight:50%;\n\t\topacity:.75;\n\t\tdisplay:block;\n\t\twidth: 0;\n\t    height: 0;\n\t    margin-top:-500px;\n\t    margin-left: -500px;\n\t    border-top: 500px solid transparent;\n\t    border-bottom: 500px solid transparent;\n\t    border-left: 500px solid #0096ff;\n\t}\n\t.project:hover\n\t.project button, .project button {\n\t\tbottom:20% !important;\n\t\twidth:50% !important;\n\t\tmargin-left:-25% !important;\n\t\topacity:1;\n\t}\n}\n@media only screen and (max-width: 767px) {\n\t.Layout {\n\t\ttext-align:center;\t\n\t}\n\t.logo {\n\t\tposition:relative;\n\t\tdisplay:inline-block;\n\t\tleft:-5px;\n\t}\n\t.project {\n\t\twidth:100%;\n\t\tmargin:0 0 30px 0;\n\t}\n\t.project h2 {\n\t\tbackground:none;\n\t\tfont-size:26px;\n\t\tpadding:25% 0 0 0;\n\t}\n\t.project p {\n\t\tdisplay:none;\n\t}\n\t.project:hover\n\t.project button, .project button {\n\t\tbottom:20% !important;\n\t\twidth:50% !important;\n\t\tmargin-left:-25% !important;\n\t}\n}", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.logo {\n  background:url('/chris_mills.png') no-repeat;\n  width:278px;\n  height:60px;\n  position:absolute;\n  left:110px;\n  margin:0;\n  padding:0;\n  top:77px;\n}\n\n.logo a{\n  position:absolute;\n  left:0;\n  top:0;\n  width:100%;\n  height:100%;\n  display:block;\n  outline:none;\n}\n\n.logo span {\n  position:absolute;\n  text-indent:-9999px;\n}\n\n@media (max-width: 768px) {\n  .logo {\n    left:5px;\n    top:50px;\n  }\n}", ""]);
 
   // exports
 
 
 /***/ },
 /* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\nnav ul {\n  list-style:none;\n}\nnav ul li {\n  display:inline-block;\n  margin-right:40px;\n}\nnav a, nav a:hover {\n  font-size:18px;\n  color:#fff;\n  display:inline-block;\n  text-transform:uppercase;\n  text-decoration:none;\n}\nnav a:hover, nav a.active {\n  text-decoration:underline;\n}\nnav .logo {\n  display:none;\n}\n.cm-close, .cm-nav-open {\n  display:none;\n}\n@media (min-width: 768px) {\n  nav {\n    position:absolute;\n    right:75px;\n    top:83px;\n    display:block;\n  }\n}\n@media only screen and (max-width: 768px) {\n  nav {\n    display: block;\n    margin: 0;\n    position: fixed;\n    width: 80vw;\n    background: #000;\n    height: 100vh;\n    left: 0;\n    right: auto;\n    top: 0;\n    z-index: 99;\n    text-align:center;\n    left:-100vw;\n    -webkit-transition: all .25s ease-in-out;\n    -o-transition: all .25s ease-in-out;\n    transition: all .25s ease-in-out;\n  }\n  nav.cm-nav-slide {\n    left:0;\n  }\n  nav ul li {\n    display:block;\n    margin:0;\n  }\n  nav a, nav a:hover {\n    display:block;\n    text-align:left;\n    font-size:24px;\n    float:none;\n    padding:25px 0;\n    background:#000;\n    opacity:.7;\n    text-decoration:none !important;\n    line-height:24px;\n    color:#fff;\n    width:100%;\n    margin:0 0 5px 0;\n  }\n  nav a.active {\n    opacity:1;\n  }\n  nav .logo {\n    position:relative;\n    display:inline-block;\n    top:0;\n    left:0;\n    margin-top:50px;\n  }\n  .cm-close {\n    background:url('/close.png') no-repeat;\n    position:absolute;\n    top:15px;\n    right:25px;\n    width:20px;\n    height:20px;\n    display:block;\n    cursor:pointer;\n    text-indent:-9999px\n  }\n  .cm-nav-open {\n    position: absolute;\n    top: 25px;\n    right: 25px;\n    width: 45px;\n    display: block;\n    cursor:pointer;\n  }\n  .cm-nav-line {\n    background: #fff;\n    height: 5px;\n    display: block;\n    margin-bottom: 8px;\n  }\n}\n@media only screen and (min-width: 1500px) {\n  nav {\n    right:145px;\n    top:77px;\n  }\n  nav a, nav a:hover {\n    font-size:24px;\n  }\n}", ""]);
+
+  // exports
+
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n\n.cm-overlay {\n\tposition:fixed;\n\twidth:100vw;\n\theight:100vh;\n\tbackground:rgb(0, 0, 0);\n\tbackground:rgba(0, 0, 0, .7);\n\ttop:0;\n\tleft:0;\n\tz-index:99;\n}\n.cm-overlay-content {\n\tmargin:0 auto;\n\twidth:970px;\n\tposition:relative;\n\tbackground:#000;\n\tmin-height:100vh;\n\theight:100%;\n\tpadding:20px 10px;\n}\n.cm-overlay h2 {\n\tbackground:none;\n\tpadding-top:50px;\n\tpadding-bottom:20px;\n}\n.cm-overlay h2, .cm-overlay p {\n\tposition:relative;\n\ttop:0;\n}\n.cm-overlay-img-mask {\n\tmax-height:60vh;\n\toverflow:hidden;\n\tmargin:20px 0 0 0;\n\tposition:relative;\n}\n.cm-overlay-close {\n\tbackground:url('/close.png') no-repeat;\n\twidth:20px;\n\theight:20px;\n    display: block;\n    text-align: right;\n    cursor:pointer;\n    width:100%;\n    background-position:top right;\n    font-size:0;\n}\n.cm-overlay-img {\n\topacity:1;\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition: all .5s ease-in-out;\n}\n.cm-img-loading {\n\topacity:.01;\n}\n.cm-overlay-img-loading {\n\tbackground-image: url('/loading.svg');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center center;\n\ttop:10vh;\n\tposition:absolute;\n\tleft:50%;\n\twidth:50px;\n\tmargin-left:-25px;\n\tmin-height:300px;\n\tz-index:2;\n}\n@media (max-width: 768px) {\n\t.cm-overlay-content {\n\t\twidth:auto;\n\t}\n}", ""]);
+
+  // exports
+
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n@font-face {\n  font-family: 'prox';\n  src: url('/ProximaNova-Semibold.otf');\n}\n\n/*\n * Media queries breakpoints\n * -------------------------------------------------------------------------- */\n.project {\n  background:#000;\n  width:24%;\n  margin:.5%;\n  float:left;\n  -webkit-box-shadow:0 0 5px #444;\n          box-shadow:0 0 5px #444;\n}\n.project-fade {\n\t-webkit-transition: all .5s ease-in-out;\n\t-o-transition: all .5s ease-in-out;\n\ttransition:all .5s ease-in-out;\n\topacity:0;\n}\n.project-shade {\n\tposition:absolute;\n\tz-index:1;\n\tleft:0;\n\ttop:0;\n\twidth:100%;\n\theight:100%;\n\tbackground:rgba(0, 0, 0, .7);\n\tdisplay:block;\n\topacity:0;\n}\n.project-shade div {\n\tdisplay:none;\n}\n.project {\n\tposition:relative;\n\toverflow:hidden;\n}\n.project h2 {\n\tfont-size:18px;\n\tposition:absolute;\n\ttop:0;\n\twidth:100%;\n\tmargin:0;\n\tpadding:20px 10px;\n\tz-index:2;\n\tbackground:#000;\n}\n.project p {\n\tdisplay:block;\n\tmargin:0;\n\tpadding:0 15px;\n\tposition:absolute;\n\ttop:90px;\n\tfont-size:14px;\n\tline-height:18px;\n\tfont-weight:normal;\n\tz-index:2;\n\t-webkit-transition-delay: .25s;\n\t     -o-transition-delay: .25s;\n\t        transition-delay: .25s;\n\twidth:90%;\n}\n.project img {\n\tposition:relative;\n\tz-index:0;\n\tdisplay:block;\n\twidth:100%;\n\theight:auto;\n}\n.project button {\n\tposition:absolute;\n\tbottom:-50px;\n\tleft:50%;\n\twidth:80px;\n\tmargin-left:-40px;\n\topacity:0;\n\tz-index:2;\n}\n.project:hover\n.project-fade {\n\topacity:1;\n}\n.project\n.project-slide-in {\n\tleft:-100%;\n}\n.project:hover\n.project-slide-in {\n\tleft:0;\n}\n.project:hover\nbutton {\n\tbottom:20px;\n}\n@media only screen and (min-width: 1500px) {\n\t.project h2 {\n\t\tfont-size:24px;\n\t}\n\t.project p {\n\t\tfont-size:18px;\n\t\tline-height:26px;\n\t}\n}\n@media (max-width: 768px) {\n\t.project {\n\t\twidth:32%;\n\t}\n\t.project h2 {\n\t\tleft:0 !important;\n\t\topacity:1 !important;\n\t}\n\t.project-shade {\n\t\topacity:.9;\n\t\twidth: 100%;\n\t    height: 100%;\n\t    padding-bottom: 25%;\n\t    padding-left: 25%;\n\t    overflow: hidden;\n\t    display:block;\n\t}\n\t.project-shade div {\n\t\twidth:50%;\n\t\theight:50%;\n\t\topacity:.75;\n\t\tdisplay:block;\n\t\twidth: 0;\n\t    height: 0;\n\t    margin-top:-500px;\n\t    margin-left: -500px;\n\t    border-top: 500px solid transparent;\n\t    border-bottom: 500px solid transparent;\n\t    border-left: 500px solid #0096ff;\n\t}\n\t.project:hover\n\t.project button, .project button {\n\t\tbottom:20% !important;\n\t\twidth:50% !important;\n\t\tmargin-left:-25% !important;\n\t\topacity:1;\n\t}\n}\n@media only screen and (max-width: 767px) {\n\t.Layout {\n\t\ttext-align:center;\t\n\t}\n\t.logo {\n\t\tposition:relative;\n\t\tdisplay:inline-block;\n\t\tleft:-5px;\n\t}\n\t.project {\n\t\twidth:100%;\n\t\tmargin:0 0 30px 0;\n\t}\n\t.project h2 {\n\t\tbackground:none;\n\t\tfont-size:26px;\n\t\tpadding:25% 0 0 0;\n\t}\n\t.project p {\n\t\tdisplay:none;\n\t}\n\t.project:hover\n\t.project button, .project button {\n\t\tbottom:20% !important;\n\t\twidth:50% !important;\n\t\tmargin-left:-25% !important;\n\t}\n}", ""]);
+
+  // exports
+
+
+/***/ },
+/* 29 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
